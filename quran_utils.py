@@ -28,7 +28,7 @@ def gen_surah_name(surah_num):
 
 def gen_data():
     data = {"surahs": []}
-    for i in range(1, 2):
+    for i in range(1, 115):
         data["surahs"].append({
             "num": i,
             "name": gen_surah_name(i),
