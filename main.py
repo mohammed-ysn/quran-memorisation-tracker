@@ -1,6 +1,11 @@
 import quran_utils as qu
 
 
+# TODO ensure revision ayah does not exceed the memorisation ayah (implement in qu.load_json)
+# TODO create logbook.json if it does not exist
+# TODO make next start memorisation ayah the previous end (to chain)
+# TODO disambiguate var and key names
+
 def main():
     filename = 'logbook.json'
     surahs_data = qu.load_json('quran_data.json')["surahs"]
@@ -13,8 +18,6 @@ def main():
         qu.update_logbook("memorise", logbook, surahs_data, filename)
         print('Logbook updated successfully')
     input('Press ENTER to exit...')
-
-    # TODO ensure revision ayah does not exceed the memorisation ayah
 
 
 if __name__ == "__main__":
