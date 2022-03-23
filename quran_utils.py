@@ -19,9 +19,7 @@ def gen_ayat_word_counts(surah, ayah):
 
 
 def gen_surah_name(surah_num):
-    response = requests.get(
-        f"https://api.quran.com/api/v4/chapters/{surah_num}?language=en"
-    ).json()
+    response = requests.get(f"https://api.quran.com/api/v4/chapters/{surah_num}?language=en").json()
     name = response["chapter"]["name_simple"]
     return name
 
@@ -85,8 +83,8 @@ def calc_start(logbook, surahs_data):
 def print_target(logbook, surahs_data):
     start = calc_start(logbook, surahs_data)
     end = calc_end(logbook, surahs_data)
-    print(
-        f'From {surah_num_to_name(start[0], surahs_data)}:{start[1]} to {surah_num_to_name(end[0], surahs_data)}:{end[1]}')
+    print(f'From {surah_num_to_name(start[0], surahs_data)}:{start[1]} to '
+          f'{surah_num_to_name(end[0], surahs_data)}:{end[1]}')
 
 
 def update_logbook(section, logbook, surahs_data, filename):
